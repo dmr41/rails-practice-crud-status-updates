@@ -1,0 +1,26 @@
+<%= form_for @statusupdate do |f| %>
+
+  <% if f.object.errors.any? %>
+    <ul>
+      <% f.object.errors.full_messages.each do |errs| %>
+        <li><%= errs %></li>
+        <% end %>
+    </ul>
+  <% end %>
+
+
+  <%= f.label :status %>
+  <%= f.text_field :status %>
+
+  <br>
+  <%= f.label :user %>
+  <%= f.text_field :user %>
+
+  <br>
+  <%= f.label :number %>
+  <%= f.number_field :number %>
+
+  <br>
+  <%= f.submit%>
+
+<% end %>

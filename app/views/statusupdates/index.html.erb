@@ -1,0 +1,54 @@
+<% if notice != nil %>
+  <%= notice %>
+<% end %>
+<br>
+<h1>Status updates mainpage</h1>
+<%= link_to "New Status", new_statusupdate_path%>
+<table>
+  <thead>
+    <tr>
+      <th>
+        Status
+      </th>
+      <th>
+        User
+      </th>
+      <th>
+        Number
+      </th>
+      <th>
+        Edit
+      </th>
+      <th>
+        Show
+      </th>
+      <th>
+        Destroy
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @statusupdates.each do |statup| %>
+    <tr>
+      <td>
+        <%= statup.status %>
+      </td>
+      <td>
+        <%= statup.user %>
+      </td>
+      <td>
+        <%= statup.number %>
+      </td>
+      <td>
+        <%= link_to "edit", edit_statusupdate_path(statup) %>
+      </td>
+      <td>
+        <%= link_to "show", statup  %>
+      </td>
+      <td>
+        <%= link_to "destroy", statup, method: :delete, data: {confirm: "Are you really really sure?"} %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
